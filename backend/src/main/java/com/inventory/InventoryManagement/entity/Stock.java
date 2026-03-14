@@ -1,10 +1,7 @@
 package com.inventory.InventoryManagement.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.ManyToOne;
-import lombok.Data;
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "stocks")
@@ -16,9 +13,11 @@ public class Stock {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne
+    @JoinColumn(name = "warehouse_id")
     private Warehouse warehouse;
 
     private Integer quantity;
