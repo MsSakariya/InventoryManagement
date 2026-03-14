@@ -1,43 +1,47 @@
-import { useContext, useState } from "react";
-import { InventoryContext } from "../context/InventoryContext";
-
+import { useEffect, useState } from "react";
+import { getProducts, createProduct } from "../services/productService";
 
 function Products() {
-    
-  const { products, setProducts } = useContext(InventoryContext);
-  const [search, setSearch] = useState("");
 
+  const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
     sku: "",
     category: "",
-    stock: "",
+    stock: ""
   });
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    const res = await getProducts();
+    setProducts(res.data);
+  };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newProduct = {
-      id: products.length + 1,
-      ...formData,
-    };
+    await createProduct(formData);
 
-    setProducts([...products, newProduct]);
+    fetchProducts();
 
     setFormData({
       name: "",
       sku: "",
       category: "",
-      stock: "",
+      stock: ""
     });
 
     setShowModal(false);
@@ -56,13 +60,14 @@ function Products() {
           Add Product
         </button>
       </div>
+
       <input
         type="text"
         placeholder="Search products..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="border p-2 rounded mb-4"
-        />
+      />
 
       <table className="w-full bg-white shadow rounded">
         <thead className="bg-gray-100">
@@ -75,25 +80,26 @@ function Products() {
         </thead>
 
         <tbody>
-          {products.filter((product) =>
-                product.name.toLowerCase().includes(search.toLowerCase())
+          {products
+            .filter((product) =>
+              product.name.toLowerCase().includes(search.toLowerCase())
             )
             .map((product) => (
-            <tr key={product.id} className="border-t">
-              <td className="p-3">{product.name}</td>
-              <td className="p-3">{product.sku}</td>
-              <td className="p-3">{product.category}</td>
-              <td className="p-3">
-            {product.stock}
+              <tr key={product.id} className="border-t">
+                <td className="p-3">{product.name}</td>
+                <td className="p-3">{product.sku}</td>
+                <td className="p-3">{product.category}</td>
+                <td className="p-3">
+                  {product.stock}
 
-            {product.stock < 20 && (
-                <span className="ml-2 text-red-500 font-bold">
-                Low
-                </span>
-            )}
-            </td>
-            </tr>
-          ))}
+                  {product.stock < 20 && (
+                    <span className="ml-2 text-red-500 font-bold">
+                      Low
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
 
@@ -147,6 +153,7 @@ function Products() {
               />
 
               <div className="flex justify-end gap-3 mt-2">
+
                 <button
                   type="button"
                   onClick={() => setShowModal(false)}
@@ -161,6 +168,7 @@ function Products() {
                 >
                   Save
                 </button>
+
               </div>
 
             </form>
@@ -169,6 +177,7 @@ function Products() {
 
         </div>
       )}
+
     </div>
   );
 }
