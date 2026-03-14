@@ -1,9 +1,7 @@
-package com.inventory.InventoryManagement.entiry;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.ManyToOne;
-import org.springframework.data.annotation.Id;
+package com.inventory.InventoryManagement.entity;
+
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "stock_movements")
@@ -16,11 +14,16 @@ public class StockMovement {
     @ManyToOne
     private Product product;
 
+    @ManyToOne
+    private Location sourceLocation;
+
+    @ManyToOne
+    private Location destinationLocation;
+
     private Integer quantity;
 
     private String movementType;
 
-    private String sourceLocation;
+    private LocalDateTime createdAt;
 
-    private String destinationLocation;
 }

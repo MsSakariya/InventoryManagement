@@ -2,7 +2,6 @@ package com.inventory.InventoryManagement.service;
 
 
 import com.inventory.InventoryManagement.dto.ProductDTO;
-import com.inventory.InventoryManagement.entiry.Product;
 
 import java.util.List;
 

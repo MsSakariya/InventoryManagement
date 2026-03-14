@@ -1,4 +1,14 @@
 package com.inventory.InventoryManagement.service;
 
-public class DeliveryService {
+import com.inventory.InventoryManagement.dto.DeliveryDTO;
+
+import java.util.List;
+
+public interface DeliveryService {
+
+    DeliveryDTO createDelivery(DeliveryDTO dto);
+
+    List<DeliveryDTO> getDeliveries();
+
+    void validateDelivery(Long id);
 }

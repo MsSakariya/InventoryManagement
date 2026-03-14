@@ -1,9 +1,8 @@
-package com.inventory.InventoryManagement.entiry;
+package com.inventory.InventoryManagement.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 import jakarta.persistence.*;
 
 @Entity

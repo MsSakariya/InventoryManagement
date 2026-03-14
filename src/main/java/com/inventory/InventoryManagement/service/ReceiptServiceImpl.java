@@ -1,7 +1,7 @@
 package com.inventory.InventoryManagement.service;
 
 import com.inventory.InventoryManagement.dto.ReceiptDTO;
-import com.inventory.InventoryManagement.entiry.Receipt;
+import com.inventory.InventoryManagement.entity.Receipt;
 import com.inventory.InventoryManagement.repository.ReceiptRepository;
 import org.springframework.stereotype.Service;
 

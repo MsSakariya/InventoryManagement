@@ -1,8 +1,8 @@
 package com.inventory.InventoryManagement.service;
 
 import com.inventory.InventoryManagement.dto.ProductDTO;
-import com.inventory.InventoryManagement.entiry.Category;
-import com.inventory.InventoryManagement.entiry.Product;
+import com.inventory.InventoryManagement.entity.Category;
+import com.inventory.InventoryManagement.entity.Product;
 import com.inventory.InventoryManagement.repository.CategoryRepository;
 import com.inventory.InventoryManagement.repository.ProductRepository;
 import org.springframework.stereotype.Service;

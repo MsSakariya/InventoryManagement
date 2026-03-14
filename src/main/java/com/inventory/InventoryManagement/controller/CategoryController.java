@@ -1,6 +1,8 @@
 package com.inventory.InventoryManagement.controller;
 
 
+import com.inventory.InventoryManagement.entity.Category;
+import com.inventory.InventoryManagement.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

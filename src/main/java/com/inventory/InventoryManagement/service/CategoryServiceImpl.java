@@ -1,6 +1,6 @@
 package com.inventory.InventoryManagement.service;
 
-import com.inventory.InventoryManagement.entiry.Category;
+import com.inventory.InventoryManagement.entity.Category;
 import com.inventory.InventoryManagement.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 

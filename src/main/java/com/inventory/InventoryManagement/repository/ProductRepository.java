@@ -1,8 +1,13 @@
 package com.inventory.InventoryManagement.repository;
 
 
-import com.inventory.InventoryManagement.entiry.Product;
+import com.inventory.InventoryManagement.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface ProductRepository extends JpaRepository<Product, Long> {
+
+    Optional<Product> findBySku(String sku);
+
 }

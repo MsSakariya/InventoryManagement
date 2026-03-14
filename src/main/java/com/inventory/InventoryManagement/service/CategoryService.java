@@ -1,7 +1,7 @@
 package com.inventory.InventoryManagement.service;
 
 
-import com.inventory.InventoryManagement.entiry.Category;
+import com.inventory.InventoryManagement.entity.Category;
 
 import java.util.List;
 
