@@ -17,26 +17,20 @@ export const InventoryProvider = ({ children }) => {
   const [ledger, setLedger] = useState([]);
   const [warehouses, setWarehouses] = useState([]);
   const [locations, setLocations] = useState([]);
+  const [stock, setStock] = useState([]);
 
   return (
 <InventoryContext.Provider
   value={{
-    products,
-    setProducts,
-    receipts,
-    setReceipts,
-    deliveries,
-    setDeliveries,
-    transfers,
-    setTransfers,
-    adjustments,
-    setAdjustments,
-    ledger,
-    setLedger,
-    warehouses,
-    setWarehouses,
-    locations,
-    setLocations
+    products, setProducts,
+    receipts, setReceipts,
+    deliveries, setDeliveries,
+    transfers, setTransfers,
+    adjustments, setAdjustments,
+    ledger, setLedger,
+    warehouses, setWarehouses,
+    locations, setLocations,
+    stock, setStock
   }}
 >
       {children}

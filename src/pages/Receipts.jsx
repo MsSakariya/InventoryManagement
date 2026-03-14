@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { InventoryContext } from "../context/InventoryContext";
 
 function Receipts() {
-    const { products, setProducts, receipts, setReceipts, ledger, setLedger } =
+    const { products, setProducts, receipts, setReceipts, ledger, setLedger, stock, setStock} =
   useContext(InventoryContext);
 
   const [formData, setFormData] = useState({
@@ -46,6 +46,16 @@ setLedger([
     quantity: "+" + formData.quantity
    }
     ]);
+    setStock([
+  ...stock,
+  {
+    id: stock.length + 1,
+    product: formData.product,
+    warehouse: "Main Warehouse",
+    location: "Rack A",
+    quantity: Number(formData.quantity)
+  }
+]);
 }
 
   return (

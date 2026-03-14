@@ -53,6 +53,9 @@ function Sidebar() {
             >
             Ledger
         </Link>
+        <Link to="/warehouse" className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded">Warehouse</Link>
+        <Link to="/locations" className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded">Locations</Link>
+        <Link to="/stock" className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded">Stock</Link>
 
       </nav>
     </div>

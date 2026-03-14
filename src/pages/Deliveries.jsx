@@ -3,7 +3,7 @@ import { InventoryContext } from "../context/InventoryContext";
 
 function Deliveries() {
 
-   const { products, setProducts, adjustments, setAdjustments, ledger, setLedger } =
+   const { products, setProducts, adjustments, setAdjustments, ledger, setLedger, stock, setStock } =
     useContext(InventoryContext);
 
   const [deliveries, setDeliveries] = useState([]);
@@ -56,7 +56,25 @@ function Deliveries() {
     quantity: "",
     customer: ""
   });
+  // Add negative stock record
+  setStock([
+    ...stock,
+    {
+      id: stock.length + 1,
+      product: formData.product,
+      warehouse: "Main Warehouse",
+      location: "Rack A",
+      quantity: -Number(formData.quantity)
+    }
+  ]);
+
+  setFormData({
+    product: "",
+    quantity: "",
+    customer: ""
+  });
 };
+
   return (
     <div className="p-10">
 
