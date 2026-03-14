@@ -1,4 +1,4 @@
-package com.inventory.InventoryManagement.entiry;
+package com.inventory.InventoryManagement.entity;
 
 import jakarta.persistence.*;
 

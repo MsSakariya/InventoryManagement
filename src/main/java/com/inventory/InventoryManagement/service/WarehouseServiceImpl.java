@@ -1,6 +1,6 @@
 package com.inventory.InventoryManagement.service;
 
-import com.inventory.InventoryManagement.entiry.Warehouse;
+import com.inventory.InventoryManagement.entity.Warehouse;
 import com.inventory.InventoryManagement.repository.WarehouseRepository;
 import org.springframework.stereotype.Service;
 

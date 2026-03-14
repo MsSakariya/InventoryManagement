@@ -1,25 +1,25 @@
-package com.inventory.InventoryManagement.entiry;
-
+package com.inventory.InventoryManagement.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.ManyToOne;
-
-import org.springframework.data.annotation.Id;
+import lombok.Data;
 import jakarta.persistence.*;
 
+
 @Entity
-@Table(name = "receipt_items")
-public class ReceiptItem {
+@Table(name = "stocks")
+@Data
+public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    private Receipt receipt;
+    private Product product;
 
     @ManyToOne
-    private Product product;
+    private Warehouse warehouse;
 
     private Integer quantity;
 }

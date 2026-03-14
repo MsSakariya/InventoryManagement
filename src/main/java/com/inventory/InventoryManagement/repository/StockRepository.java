@@ -1,7 +1,12 @@
 package com.inventory.InventoryManagement.repository;
 
-import com.inventory.InventoryManagement.entiry.Stock;
+import com.inventory.InventoryManagement.entity.Stock;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface StockRepository extends JpaRepository<Stock, Long> {
+
+    Optional<Stock> findByProductIdAndWarehouseId(Long productId, Long warehouseId);
+
 }

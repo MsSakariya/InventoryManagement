@@ -1,6 +1,6 @@
 package com.inventory.InventoryManagement.service;
 
-import com.inventory.InventoryManagement.entiry.Warehouse;
+import com.inventory.InventoryManagement.entity.Warehouse;
 
 import java.util.List;
 

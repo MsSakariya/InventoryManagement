@@ -1,6 +1,6 @@
 package com.inventory.InventoryManagement.controller;
 
-import com.inventory.InventoryManagement.entiry.Warehouse;
+import com.inventory.InventoryManagement.entity.Warehouse;
 import com.inventory.InventoryManagement.service.WarehouseService;
 import org.springframework.web.bind.annotation.*;
 

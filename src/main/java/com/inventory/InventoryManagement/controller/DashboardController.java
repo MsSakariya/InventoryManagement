@@ -2,6 +2,7 @@ package com.inventory.InventoryManagement.controller;
 
 
 import com.inventory.InventoryManagement.dto.DashboardDTO;
+import com.inventory.InventoryManagement.service.DashboardService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
