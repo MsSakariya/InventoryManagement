@@ -2,10 +2,12 @@ package com.inventory.InventoryManagement.entiry;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import jakarta.persistence.*;
 
 @Entity
+@Data
 @Table(name = "receipts")
 public class Receipt {
     @Id

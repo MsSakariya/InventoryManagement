@@ -3,9 +3,13 @@ package com.inventory.InventoryManagement.dto;
 import lombok.Data;
 
 @Data
-public class StockDTO {
+public class AdjustmentDTO {
 
     private Long productId;
     private Long warehouseId;
-    private Integer quantity;
+    private Integer countedQuantity;
+
+    public AdjustmentDTO() {}
+
+
 }

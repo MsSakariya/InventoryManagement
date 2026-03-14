@@ -4,15 +4,14 @@ package com.inventory.InventoryManagement.dto;
 import lombok.Data;
 
 import java.util.List;
-
 @Data
-public class ReceiptDTO {
+public class DeliveryDTO {
 
     private Long id;
-    private String supplier;
+    private String customer;
     private String status;
-    private List<ReceiptItemDTO> items;
+    private List<DeliveryItemDTO> items;
 
-    public ReceiptDTO() {}
+    public DeliveryDTO() {}
 
 }
