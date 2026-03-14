@@ -1,2 +1,4 @@
-package com.inventory.InventoryManagement.controller;public class ProductController {
+package com.inventory.InventoryManagement.controller;
+
+public class ProductController {
 }

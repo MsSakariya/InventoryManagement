@@ -1,2 +1,7 @@
-package com.inventory.InventoryManagement.repository;public class ReceiptRepository {
+package com.inventory.InventoryManagement.repository;
+
+import com.inventory.InventoryManagement.entiry.Receipt;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ReceiptRepository extends JpaRepository<Receipt, Long> {
 }
